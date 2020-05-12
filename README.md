@@ -5,12 +5,10 @@
 
 ### Installation
 
-```sh
-yarn add react-native-heroicons
-```
+**Requires react-native-svg v9 or higher**
 
 ```sh
-npm install react-native-heroicons
+yarn add react-native-heroicons react-native-svg
 ```
 
 ### Usage
