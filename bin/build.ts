@@ -1,11 +1,11 @@
 import svgr from "@svgr/core";
 import { promises as fs } from "fs";
-import * as junk from "junk";
 import template from "./template";
+const junk = require("junk");
 
 const srcDir = "./src";
-const inputPath = "./svg";
-const iconTypes = ["solid-sm", "outline-md"];
+const inputPath = "./heroicons";
+const iconTypes = ["solid", "outline"];
 const outputPath = "icons";
 
 const resetSrcDir = async () => {
@@ -27,7 +27,6 @@ const getIconSuffixByType = (type: string) => {
 const getIconNameByType = (name: string, type: string) =>
   name
     .replace(".svg", "")
-    .substring(3)
     .split("-")
     .map((el) => el.charAt(0).toUpperCase() + el.substring(1))
     .join("") + type;
