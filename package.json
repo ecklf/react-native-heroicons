@@ -2,16 +2,17 @@
   "name": "react-native-heroicons",
   "version": "1.0.1",
   "description": "React Native components for heroicons",
-  "types": "build/index.d.ts",
-  "main": "build/index.js",
-  "module": "build/index.es.js",
-  "typings": "build/index.d.ts",
+  "types": "./build/index.d.ts",
+  "main": "./build/index.js",
+  "module": "./build/index.es.js",
+  "typings": "./build/index.d.ts",
   "files": [
-    "build"
+    "/build"
   ],
   "sideEffects": false,
   "scripts": {
-    "gen": "ts-node --project bin/tsconfig.json --files bin/build.ts",
+    "fetch": "rm -rf heroicons/ && git clone https://github.com/refactoringui/heroicons/",
+    "gen": "npm run fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
     "build": "npm run gen && rollup -c rollup.config.ts",
     "watch": "rollup -c rollup.config.ts --watch"
   },
@@ -31,23 +32,23 @@
   "author": "impulse",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-commonjs": "^12.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.0",
     "@svgr/core": "^5.4.0",
     "@svgr/plugin-jsx": "^5.4.0",
     "@svgr/plugin-prettier": "^5.4.0",
     "@svgr/plugin-svgo": "^5.4.0",
-    "@types/node": "^13.13.4",
+    "@types/node": "^14.0.4",
     "@types/react": "^16.9.35",
     "junk": "^3.1.0",
     "react": "^16.13.1",
     "react-native-svg": "^12.1.0",
-    "rollup": "^2.7.3",
+    "rollup": "^2.10.5",
     "rollup-plugin-peer-deps-external": "^2.2.2",
     "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-typescript2": "^0.27.0",
-    "ts-node": "^8.9.1",
-    "typescript": "^3.8.3"
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.9.3"
   },
   "peerDependencies": {
     "react": ">=16.8",
