@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const Plus = ({ size = 24, ...props }: Props) => {
+const MusicNote = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       viewBox="0 0 20 20"
@@ -13,13 +13,9 @@ const Plus = ({ size = 24, ...props }: Props) => {
       height={size}
       {...props}
     >
-      <Path
-        fillRule="evenodd"
-        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-        clipRule="evenodd"
-      />
+      <Path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z" />
     </Svg>
   );
 };
 
-export default Plus;
+export default MusicNote;

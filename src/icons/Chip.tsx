@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const CloudDownload = ({ size = 24, ...props }: Props) => {
+const Chip = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       viewBox="0 0 20 20"
@@ -13,13 +13,14 @@ const CloudDownload = ({ size = 24, ...props }: Props) => {
       height={size}
       {...props}
     >
+      <Path d="M13 7H7v6h6V7z" />
       <Path
         fillRule="evenodd"
-        d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z"
+        d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z"
         clipRule="evenodd"
       />
     </Svg>
   );
 };
 
-export default CloudDownload;
+export default Chip;

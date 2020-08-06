@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
+const CurrencyBangladeshiOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
@@ -18,10 +18,10 @@ const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6h.1a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+        d="M11 11V9a2 2 0 00-2-2m2 4v4a2 2 0 104 0v-1m-4-3H9m2 0h4m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </Svg>
   );
 };
 
-export default CloudDownloadOutline;
+export default CurrencyBangladeshiOutline;

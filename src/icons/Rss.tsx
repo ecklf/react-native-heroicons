@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const Plus = ({ size = 24, ...props }: Props) => {
+const Rss = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       viewBox="0 0 20 20"
@@ -13,13 +13,10 @@ const Plus = ({ size = 24, ...props }: Props) => {
       height={size}
       {...props}
     >
-      <Path
-        fillRule="evenodd"
-        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-        clipRule="evenodd"
-      />
+      <Path d="M5 3a1 1 0 000 2c5.523 0 10 4.477 10 10a1 1 0 102 0C17 8.373 11.627 3 5 3z" />
+      <Path d="M4 9a1 1 0 011-1 7 7 0 017 7 1 1 0 11-2 0 5 5 0 00-5-5 1 1 0 01-1-1zm-1 6a2 2 0 114 0 2 2 0 01-4 0z" />
     </Svg>
   );
 };
 
-export default Plus;
+export default Rss;

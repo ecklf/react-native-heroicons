@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
+const PresentationChartBarOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
@@ -18,10 +18,10 @@ const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6h.1a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+        d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"
       />
     </Svg>
   );
 };
 
-export default CloudDownloadOutline;
+export default PresentationChartBarOutline;

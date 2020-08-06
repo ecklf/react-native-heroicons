@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const Plus = ({ size = 24, ...props }: Props) => {
+const PaperAirplane = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       viewBox="0 0 20 20"
@@ -13,13 +13,9 @@ const Plus = ({ size = 24, ...props }: Props) => {
       height={size}
       {...props}
     >
-      <Path
-        fillRule="evenodd"
-        d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z"
-        clipRule="evenodd"
-      />
+      <Path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
     </Svg>
   );
 };
 
-export default Plus;
+export default PaperAirplane;

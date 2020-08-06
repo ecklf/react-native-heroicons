@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
+const PhoneMissedCallOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
@@ -18,10 +18,10 @@ const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth={2}
-        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6h.1a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+        d="M16 8l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M5 3a2 2 0 00-2 2v1c0 8.284 6.716 15 15 15h1a2 2 0 002-2v-3.28a1 1 0 00-.684-.948l-4.493-1.498a1 1 0 00-1.21.502l-1.13 2.257a11.042 11.042 0 01-5.516-5.517l2.257-1.128a1 1 0 00.502-1.21L9.228 3.683A1 1 0 008.279 3H5z"
       />
     </Svg>
   );
 };
 
-export default CloudDownloadOutline;
+export default PhoneMissedCallOutline;
