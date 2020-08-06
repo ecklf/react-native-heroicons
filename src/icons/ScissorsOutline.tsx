@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
+const ScissorsOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
@@ -16,12 +16,11 @@ const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
     >
       <Path
         strokeLinecap="round"
-        strokeLinejoin="round"
         strokeWidth={2}
-        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6h.1a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+        d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758a3 3 0 10-4.243 4.243 3 3 0 004.243-4.243zm0-5.758a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243z"
       />
     </Svg>
   );
 };
 
-export default CloudDownloadOutline;
+export default ScissorsOutline;

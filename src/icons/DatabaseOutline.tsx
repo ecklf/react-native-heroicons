@@ -4,7 +4,7 @@ interface Props extends SvgProps {
   size?: number;
 }
 
-const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
+const DatabaseOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
@@ -15,13 +15,11 @@ const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
       {...props}
     >
       <Path
-        strokeLinecap="round"
-        strokeLinejoin="round"
         strokeWidth={2}
-        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6h.1a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"
+        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
       />
     </Svg>
   );
 };
 
-export default CloudDownloadOutline;
+export default DatabaseOutline;
