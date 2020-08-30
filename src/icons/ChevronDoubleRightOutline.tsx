@@ -6,19 +6,13 @@ interface Props extends SvgProps {
 
 const ChevronDoubleRightOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
+        d="M13 5l7 7-7 7M5 5l7 7-7 7"
+        stroke="#374151"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M13 5l7 7-7 7M5 5l7 7-7 7"
       />
     </Svg>
   );

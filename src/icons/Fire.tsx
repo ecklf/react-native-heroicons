@@ -1,33 +1,18 @@
 import * as React from "react";
-import Svg, { Path, SvgProps, G, Defs, ClipPath } from "react-native-svg";
+import Svg, { Path, SvgProps } from "react-native-svg";
 interface Props extends SvgProps {
   size?: number;
 }
 
 const Fire = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
-      <G clipPath="url(#prefix__clip0)">
-        <Path
-          stroke="#374151"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M14.243 15.243a6 6 0 01-8.486-8.486C5.757 9 6 11 9 12c0-2 1-8 2.5-9 1 2 1.571 2.586 2.742 3.757A5.981 5.981 0 0116 11a5.982 5.982 0 01-1.757 4.243z"
-        />
-        <Path d="M7.879 15.121a3 3 0 104.242-4.242C11.536 10.293 11.25 10 10.75 9c-.75.5-1.25 3.5-1.25 4.5C7.879 13.5 7 13 7 13c0 .768.293 1.536.879 2.121z" />
-      </G>
-      <Defs>
-        <ClipPath id="prefix__clip0">
-          <Path d="M0 0h20v20H0z" />
-        </ClipPath>
-      </Defs>
+    <Svg width={size} height={size} fill="none" {...props}>
+      <Path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+        fill="#374151"
+      />
     </Svg>
   );
 };

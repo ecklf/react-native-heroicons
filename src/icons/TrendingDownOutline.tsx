@@ -6,19 +6,13 @@ interface Props extends SvgProps {
 
 const TrendingDownOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
+        d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6"
       />
     </Svg>
   );
