@@ -6,19 +6,13 @@ interface Props extends SvgProps {
 
 const UserRemoveOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
+        d="M13 7a4 4 0 11-8 0 4 4 0 018 0zM9 14a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zM21 12h-6"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M13 7a4 4 0 11-8 0 4 4 0 018 0zm-4 7a6 6 0 00-6 6v1h12v-1a6 6 0 00-6-6zm12-2h-6"
       />
     </Svg>
   );

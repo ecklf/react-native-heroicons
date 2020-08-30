@@ -6,19 +6,13 @@ interface Props extends SvgProps {
 
 const MenuAlt3Outline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
+        d="M4 6h16M4 12h16m-7 6h7"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M4 6h16M4 12h16m-7 6h7"
       />
     </Svg>
   );

@@ -297,6 +297,7 @@ export default App;
 ├── LockClosedOutline.tsx
 ├── LockOpen.tsx
 ├── LockOpenOutline.tsx
+├── Login.tsx
 ├── LoginOutline.tsx
 ├── Logout.tsx
 ├── LogoutOutline.tsx
@@ -322,6 +323,8 @@ export default App;
 ├── MinusCircle.tsx
 ├── MinusCircleOutline.tsx
 ├── MinusOutline.tsx
+├── MinusSm.tsx
+├── MinusSmOutline.tsx
 ├── Moon.tsx
 ├── MoonOutline.tsx
 ├── MusicNote.tsx
@@ -356,6 +359,8 @@ export default App;
 ├── PlusCircle.tsx
 ├── PlusCircleOutline.tsx
 ├── PlusOutline.tsx
+├── PlusSm.tsx
+├── PlusSmOutline.tsx
 ├── PresentationChartBar.tsx
 ├── PresentationChartBarOutline.tsx
 ├── PresentationChartLine.tsx

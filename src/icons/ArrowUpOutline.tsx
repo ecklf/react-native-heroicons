@@ -6,19 +6,13 @@ interface Props extends SvgProps {
 
 const ArrowUpOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
+        d="M5 10l7-7m0 0l7 7m-7-7v18"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M5 10l7-7m0 0l7 7m-7-7v18"
       />
     </Svg>
   );

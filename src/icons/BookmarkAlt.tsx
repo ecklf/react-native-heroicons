@@ -6,17 +6,12 @@ interface Props extends SvgProps {
 
 const BookmarkAlt = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
         fillRule="evenodd"
-        d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z"
         clipRule="evenodd"
+        d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z"
+        fill="#4B5563"
       />
     </Svg>
   );

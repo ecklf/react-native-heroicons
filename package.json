@@ -13,7 +13,8 @@
   "scripts": {
     "fetch": "rm -rf heroicons/ && git clone https://github.com/refactoringui/heroicons/",
     "gen": "npm run fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
-    "build": "npm run gen && rollup -c rollup.config.ts",
+    "cleanup": "./cleanup.sh",
+    "build": "npm run gen && rollup -c rollup.config.ts && npm run cleanup",
     "watch": "rollup -c rollup.config.ts --watch"
   },
   "keywords": [

@@ -6,19 +6,13 @@ interface Props extends SvgProps {
 
 const MinusCircleOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      width={size}
-      height={size}
-      {...props}
-    >
+    <Svg width={size} height={size} fill="none" {...props}>
       <Path
+        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+        stroke="#4A5568"
+        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
-        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
       />
     </Svg>
   );
