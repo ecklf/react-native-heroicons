@@ -4,7 +4,7 @@ import template from "./template";
 const junk = require("junk");
 
 const srcDir = "./src";
-const inputPath = "./heroicons/src";
+const inputPath = "./heroicons/optimized";
 const iconTypes = ["solid", "outline"];
 const outputPath = "icons";
 

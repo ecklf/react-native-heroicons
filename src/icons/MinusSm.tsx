@@ -6,12 +6,17 @@ interface Props extends SvgProps {
 
 const MinusSm = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg width={size} height={size} fill="none" {...props}>
+    <Svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      width={size}
+      height={size}
+      {...props}
+    >
       <Path
         fillRule="evenodd"
-        clipRule="evenodd"
         d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z"
-        fill="#374151"
+        clipRule="evenodd"
       />
     </Svg>
   );
