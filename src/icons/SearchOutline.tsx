@@ -6,13 +6,19 @@ interface Props extends SvgProps {
 
 const SearchOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg width={size} height={size} fill="none" {...props}>
+    <Svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      {...props}
+    >
       <Path
-        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-        stroke="#4A5568"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
       />
     </Svg>
   );

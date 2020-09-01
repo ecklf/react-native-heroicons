@@ -6,13 +6,19 @@ interface Props extends SvgProps {
 
 const ShoppingBagOutline = ({ size = 24, ...props }: Props) => {
   return (
-    <Svg width={size} height={size} fill="none" {...props}>
+    <Svg
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      width={size}
+      height={size}
+      {...props}
+    >
       <Path
-        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-        stroke="#374151"
-        strokeWidth={2}
         strokeLinecap="round"
         strokeLinejoin="round"
+        strokeWidth={2}
+        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
       />
     </Svg>
   );
