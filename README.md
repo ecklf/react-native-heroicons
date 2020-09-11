@@ -16,7 +16,7 @@ or
 npm install react-native-heroicons react-native-svg --save
 ```
 
-### Usage
+## Usage
 
 ```javascript
 import React from "react";
