@@ -10,6 +10,11 @@
 ```sh
 yarn add react-native-heroicons react-native-svg
 ```
+or
+
+```sh
+npm install react-native-heroicons react-native-svg --save
+```
 
 ### Usage
 
@@ -24,13 +29,24 @@ const App = () => {
 export default App;
 ```
 
+### Size
+
 Icons can be sized - based on height (default: 24)
 
 ```javascript
 <Sparkles size={42} />
+
 ```
 
-You can also include the whole icon pack:
+### Medium/Outlined icons
+Medium icons are available with the `Outline`-suffix
+
+```javascript
+<SparklesOutline />
+
+```
+### Inluding the entire icon pack
+You can also include the entire icon pack:
 
 ```javascript
 import React from "react";
