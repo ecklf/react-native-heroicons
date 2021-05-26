@@ -41,6 +41,7 @@ const genNamedComponentFromBuffer = async (
       {
         template,
         svgo: true,
+        svgoConfig: { plugins: [{ sortAttrs: true }, { removeXMLNS: true }] },
         ref: false,
         native: true,
         svgProps: { width: "{size}", height: "{size}" },

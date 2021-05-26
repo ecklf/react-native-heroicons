@@ -8,17 +8,14 @@ const AcademicCapOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
-      viewBox="0 0 24 24"
       stroke="currentColor"
+      viewBox="0 0 24 24"
       width={size}
       height={size}
       {...props}
     >
-      <Path fill="#fff" d="M12 14l9-5-9-5-9 5 9 5z" />
-      <Path
-        fill="#fff"
-        d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
-      />
+      <Path d="M12 14l9-5-9-5-9 5 9 5z" />
+      <Path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
       <Path
         strokeLinecap="round"
         strokeLinejoin="round"

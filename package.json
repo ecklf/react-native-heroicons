@@ -2,20 +2,18 @@
   "name": "react-native-heroicons",
   "version": "1.4.0",
   "description": "React Native components for heroicons",
-  "types": "./build/index.d.ts",
-  "main": "./build/index.js",
-  "module": "./build/index.es.js",
-  "typings": "./build/index.d.ts",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "files": [
-    "/build"
+    "/dist"
   ],
   "sideEffects": false,
   "scripts": {
-    "fetch": "rm -rf heroicons/ && git clone https://github.com/refactoringui/heroicons/",
-    "gen": "npm run fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
+    "fetch": "rimraf heroicons/ && git clone https://github.com/tailwindlabs/heroicons/",
+    "gen": "yarn fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
     "cleanup": "./cleanup.sh",
-    "build": "npm run gen && rollup -c rollup.config.ts && npm run cleanup",
-    "watch": "rollup -c rollup.config.ts --watch"
+    "compile": "esbuild src/index.ts --bundle --external:@babel --external:react-native --format=esm --minify --outfile=dist/index.js && tsc --emitDeclarationOnly --outDir dist",
+    "build": "yarn gen && yarn compile && yarn cleanup"
   },
   "keywords": [
     "react",
@@ -25,31 +23,28 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/impulse/react-native-heroicons"
+    "url": "git+https://github.com/ecklf/react-native-heroicons"
   },
   "bugs": {
-    "url": "https://github.com/impulse/react-native-heroicons/issues"
+    "url": "https://github.com/ecklf/react-native-heroicons/issues"
   },
-  "author": "impulse",
+  "author": "ecklf",
   "license": "MIT",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^12.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
     "@svgr/core": "^5.4.0",
     "@svgr/plugin-jsx": "^5.4.0",
     "@svgr/plugin-prettier": "^5.4.0",
     "@svgr/plugin-svgo": "^5.4.0",
-    "@types/node": "^14.0.4",
-    "@types/react": "^16.9.35",
+    "@types/node": "^15.6.1",
+    "@types/react": "^17.0.8",
+    "@types/react-native": "^0.64.6",
+    "esbuild": "^0.12.3",
     "junk": "^3.1.0",
-    "react": "^16.13.1",
+    "react": "^17.0.2",
     "react-native-svg": "^12.1.0",
-    "rollup": "^2.10.5",
-    "rollup-plugin-peer-deps-external": "^2.2.2",
-    "rollup-plugin-terser": "^5.3.0",
-    "rollup-plugin-typescript2": "^0.27.1",
-    "ts-node": "^8.10.1",
-    "typescript": "^3.9.3"
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.2.4"
   },
   "peerDependencies": {
     "react": ">=16.8",

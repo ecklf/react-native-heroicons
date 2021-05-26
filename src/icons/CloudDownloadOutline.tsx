@@ -8,8 +8,8 @@ const CloudDownloadOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
-      viewBox="0 0 24 24"
       stroke="currentColor"
+      viewBox="0 0 24 24"
       width={size}
       height={size}
       {...props}

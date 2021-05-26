@@ -7,8 +7,8 @@ interface Props extends SvgProps {
 const DeviceMobile = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
-      viewBox="0 0 20 20"
       fill="currentColor"
+      viewBox="0 0 20 20"
       width={size}
       height={size}
       {...props}

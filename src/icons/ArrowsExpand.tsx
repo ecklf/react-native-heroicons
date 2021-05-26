@@ -7,8 +7,8 @@ interface Props extends SvgProps {
 const ArrowsExpand = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
-      viewBox="0 0 19 20"
       fill="currentColor"
+      viewBox="0 0 19 20"
       width={size}
       height={size}
       {...props}

@@ -8,16 +8,13 @@ const TruckOutline = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="none"
-      viewBox="0 0 24 24"
       stroke="currentColor"
+      viewBox="0 0 24 24"
       width={size}
       height={size}
       {...props}
     >
-      <Path
-        fill="#fff"
-        d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z"
-      />
+      <Path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zm10 0a2 2 0 11-4 0 2 2 0 014 0z" />
       <Path
         strokeLinecap="round"
         strokeLinejoin="round"
