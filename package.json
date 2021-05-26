@@ -3,6 +3,7 @@
   "version": "1.5.0",
   "description": "React Native components for heroicons",
   "main": "./dist/index.js",
+  "module": "./dist/esm/index.js",
   "typings": "./dist/index.d.ts",
   "files": [
     "/dist"
@@ -12,7 +13,7 @@
     "fetch": "rimraf heroicons/ && git clone https://github.com/tailwindlabs/heroicons/",
     "gen": "yarn fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
     "cleanup": "./cleanup.sh",
-    "compile": "esbuild src/index.ts --bundle --external:@babel --external:react-native --format=esm --minify --outfile=dist/index.js && tsc --emitDeclarationOnly --outDir dist",
+    "compile": "node compile.js && tsc --emitDeclarationOnly --outDir dist && tsc --emitDeclarationOnly --outDir dist/esm",
     "build": "yarn gen && yarn compile && yarn cleanup"
   },
   "keywords": [
@@ -43,6 +44,7 @@
     "react": "^17.0.2",
     "react-native-svg": "^12.1.0",
     "rimraf": "^3.0.2",
+    "tiny-glob": "^0.2.9",
     "ts-node": "^10.0.0",
     "typescript": "^4.2.4"
   },
