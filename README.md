@@ -27,7 +27,7 @@ npm install react-native-heroicons react-native-svg --save
 
 ## Usage
 
-react-native-heroicons can be used simply by importing the icon you want:
+import the icon you want:
 
 ```tsx
 import React from "react";
@@ -40,7 +40,7 @@ const App = () => {
 export default App;
 ```
 
-or by including the entire icon pack
+or include the entire icon pack:
 
 ```tsx
 import React from "react";
