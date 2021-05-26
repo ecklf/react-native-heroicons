@@ -3,7 +3,7 @@
 
 # React Native Heroicons
 
-The awesome icon pack Heroicons designed by [Steve Schoger](https://twitter.com/steveschoger) and published by the makers of [Tailwind CSS](https://tailwindcss.com/), as a react-native component. 
+The awesome icon pack Heroicons designed by [Steve Schoger](https://twitter.com/steveschoger) and published by the makers of [Tailwind CSS](https://tailwindcss.com/), as react-native components. 
 
 A full directory of all available icons can be found here: 
 
@@ -12,9 +12,9 @@ https://heroicons.com/
 
 ## Installation
 
-**React-native-heroicons requires react-native-svg v9 or higher**
+**react-native-heroicons requires react-native-svg v9 or higher**
 
-### Yarn
+### yarn
 ```sh
 yarn add react-native-heroicons react-native-svg
 ```
@@ -27,11 +27,9 @@ npm install react-native-heroicons react-native-svg --save
 
 ## Usage
 
-### Example usage
+react-native-heroicons can be used simply by importing the icon you want:
 
-React-native-heroicons can be used simply by importing the icon you want:
-
-```javascript
+```tsx
 import React from "react";
 import { Sparkles } from "react-native-heroicons";
 
@@ -44,7 +42,7 @@ export default App;
 
 or by including the entire icon pack
 
-```javascript
+```tsx
 import React from "react";
 import * as Icons from "react-native-heroicons";
 
@@ -54,34 +52,20 @@ const App = () => {
 
 export default App;
 ```
-## Props and customization
 
-### Color
-
-Icons can be sized - based on height
-
-Default size: 24
-
-```javascript
-<Sparkles color="#fff" />
-
-```
-
-### Size
+## Customization
 
 Icons can be sized - based on height
 
 Default size: 24
 
-```javascript
+```tsx
 <Sparkles size={42} />
-
 ```
 
-### Medium/Outlined icons
-Medium icons are available with the `Outline`-suffix
+## Outlined icons
+Available with the `Outline` suffix
 
-```javascript
+```tsx
 <SparklesOutline />
-
 ```
