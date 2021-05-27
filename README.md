@@ -3,7 +3,7 @@
 
 # React Native Heroicons
 
-The awesome icon pack Heroicons designed by [Steve Schoger](https://twitter.com/steveschoger) and published by the makers of [Tailwind CSS](https://tailwindcss.com/), as react-native components.
+Heroicons are designed by [Steve Schoger](https://twitter.com/steveschoger) and published by [Tailwind Labs](https://github.com/tailwindlabs/heroicons).
 
 A full directory of all available icons can be found here:
 
