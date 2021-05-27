@@ -2,19 +2,33 @@ const { build } = require("esbuild");
 const glob = require("tiny-glob");
 
 (async () => {
-  const entryPoints = await glob("./src/**/*.{ts,tsx}");
-
+  const solidEntryPoints = await glob("./src/solid/*.{ts,tsx}");
   await build({
-    entryPoints,
+    entryPoints: solidEntryPoints,
     format: "cjs",
     minify: true,
-    outdir: "./dist",
+    outdir: "./dist/solid",
   });
 
   await build({
-    entryPoints,
+    entryPoints: solidEntryPoints,
     format: "esm",
     minify: true,
-    outdir: "./dist/esm",
+    outdir: "./dist/solid/esm",
+  });
+
+  const outlineEntryPoints = await glob("./src/outline/*.{ts,tsx}");
+  await build({
+    entryPoints: outlineEntryPoints,
+    format: "cjs",
+    minify: true,
+    outdir: "./dist/outline",
+  });
+
+  await build({
+    entryPoints: outlineEntryPoints,
+    format: "esm",
+    minify: true,
+    outdir: "./dist/outline/esm",
   });
 })();
