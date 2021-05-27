@@ -1,16 +1,17 @@
 {
   "name": "react-native-heroicons",
-  "version": "1.6.0",
+  "version": "2.0.0",
   "description": "React Native components for heroicons",
   "files": [
-    "/dist"
+    "solid",
+    "outline"
   ],
   "sideEffects": false,
   "scripts": {
     "fetch": "rimraf heroicons/ && git clone https://github.com/tailwindlabs/heroicons/",
     "gen": "yarn fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
     "cleanup": "./cleanup.sh",
-    "compile": "rimraf dist && node compile.js && tsc --emitDeclarationOnly --outDir dist && cp dist/solid/*.d.ts dist/solid/esm && cp dist/outline/*.d.ts dist/outline/esm",
+    "compile": "rimraf solid && rimraf outline && node compile.js && tsc --emitDeclarationOnly --outDir . && cp solid/*.d.ts solid/esm && cp outline/*.d.ts outline/esm",
     "build:fetch": "yarn gen && yarn compile && yarn cleanup",
     "build": "yarn compile && yarn cleanup"
   },
