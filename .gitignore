@@ -2,5 +2,6 @@
 node_modules/
 solid/
 outline/
+!src/
 build/
 heroicons/
