@@ -13,7 +13,7 @@ const resetSrcDir = async () => {
     await fs.mkdir(`./src/solid`);
     await fs.mkdir(`./src/outline`);
   } catch (error) {
-    throw new Error(error);
+    throw new Error("Failed wiping src folders");
   }
 };
 
@@ -42,7 +42,7 @@ const genComponentFromBuffer = async (
       }
     );
   } catch (error) {
-    throw new Error(error);
+    throw new Error("Failed generating components");
   }
 };
 
