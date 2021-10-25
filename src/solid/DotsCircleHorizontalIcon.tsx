@@ -8,6 +8,7 @@ const DotsCircleHorizontalIcon = ({ size = 24, ...props }: Props) => {
   return (
     <Svg
       fill="currentColor"
+      aria-hidden="true"
       viewBox="0 0 20 20"
       width={size}
       height={size}

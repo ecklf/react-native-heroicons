@@ -9,6 +9,7 @@ const MapIcon = ({ size = 24, ...props }: Props) => {
     <Svg
       fill="none"
       stroke="currentColor"
+      aria-hidden="true"
       viewBox="0 0 24 24"
       width={size}
       height={size}
