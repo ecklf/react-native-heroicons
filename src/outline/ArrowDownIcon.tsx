@@ -9,6 +9,7 @@ const ArrowDownIcon = ({ size = 24, ...props }: Props) => {
     <Svg
       fill="none"
       stroke="currentColor"
+      strokeWidth={2}
       aria-hidden="true"
       viewBox="0 0 24 24"
       width={size}
@@ -18,7 +19,6 @@ const ArrowDownIcon = ({ size = 24, ...props }: Props) => {
       <Path
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
         d="M19 14l-7 7m0 0l-7-7m7 7V3"
       />
     </Svg>

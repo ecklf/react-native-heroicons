@@ -9,6 +9,7 @@ const ChevronDoubleUpIcon = ({ size = 24, ...props }: Props) => {
     <Svg
       fill="none"
       stroke="currentColor"
+      strokeWidth={2}
       aria-hidden="true"
       viewBox="0 0 24 24"
       width={size}
@@ -18,7 +19,6 @@ const ChevronDoubleUpIcon = ({ size = 24, ...props }: Props) => {
       <Path
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth={2}
         d="M5 11l7-7 7 7M5 19l7-7 7 7"
       />
     </Svg>
