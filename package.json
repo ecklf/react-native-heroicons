@@ -13,7 +13,8 @@
     "cleanup": "./cleanup.sh",
     "compile": "rimraf solid && rimraf outline && node compile.js && tsc --emitDeclarationOnly --outDir . && cp solid/*.d.ts solid/esm && cp outline/*.d.ts outline/esm",
     "build:fetch": "npm run gen && npm run compile && npm run cleanup",
-    "build": "npm run compile && npm run cleanup"
+    "build": "npm run compile && npm run cleanup",
+    "release": "npm run build:fetch && release-it"
   },
   "keywords": [
     "react",
@@ -43,6 +44,7 @@
     "junk": "^3.1.0",
     "react": "^17.0.2",
     "react-native-svg": "^12.3.0",
+    "release-it": "^14.14.2",
     "rimraf": "^3.0.2",
     "tiny-glob": "^0.2.9",
     "ts-node": "^10.7.0",
@@ -51,5 +53,15 @@
   "peerDependencies": {
     "react": ">=16.8",
     "react-native-svg": ">=9"
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}",
+      "tagName": "v${version}",
+      "requireCleanWorkingDir": false
+    },
+    "github": {
+      "release": true
+    }
   }
 }
