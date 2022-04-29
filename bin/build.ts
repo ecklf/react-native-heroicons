@@ -9,6 +9,10 @@ type IconStyle = "solid" | "outline";
 const resetSrcDir = async () => {
   try {
     await fs.rm(`./src`, { recursive: true });
+  } catch (error) {
+    // Allowed to fail
+  }
+  try {
     await fs.mkdir(`./src`);
     await fs.mkdir(`./src/solid`);
     await fs.mkdir(`./src/outline`);
