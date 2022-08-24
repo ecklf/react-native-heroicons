@@ -1,7 +1,7 @@
 export const template = (
   { template }: any,
-  opts: any,
-  { imports, componentName, props, jsx, exports }: any
+  _opts: any,
+  { imports: _imports, componentName, props: _props, jsx, exports }: any
 ) => {
   const tsTemplate = template.smart({ plugins: ["typescript"] });
 

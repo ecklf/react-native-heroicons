@@ -4,14 +4,15 @@
   "description": "React Native components for heroicons",
   "files": [
     "solid",
-    "outline"
+    "outline",
+    "mini"
   ],
   "sideEffects": false,
   "scripts": {
     "fetch": "rimraf heroicons/ && git clone https://github.com/tailwindlabs/heroicons/",
     "gen": "npm run fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
     "cleanup": "./cleanup.sh",
-    "compile": "rimraf solid && rimraf outline && node compile.js && tsc --emitDeclarationOnly --outDir . && cp solid/*.d.ts solid/esm && cp outline/*.d.ts outline/esm",
+    "compile": "rimraf solid && rimraf outline && rimraf mini && node compile.js && tsc --emitDeclarationOnly --outDir . && cp solid/*.d.ts solid/esm && cp outline/*.d.ts outline/esm && cp mini/*.d.ts mini/esm",
     "build:fetch": "npm run gen && npm run compile && npm run cleanup",
     "build": "npm run compile && npm run cleanup",
     "release": "npm run build:fetch && release-it"

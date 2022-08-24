@@ -1,10 +1,10 @@
 import svgr from "@svgr/core";
 import { promises as fs } from "fs";
 import template from "./template";
-const junk = require("junk");
-const camelcase = require("camelcase");
+import junk from "junk";
+import camelcase from "camelcase";
 
-type IconStyle = "solid" | "outline";
+type IconStyle = "solid" | "outline" | "mini";
 
 const resetSrcDir = async () => {
   try {
@@ -16,6 +16,7 @@ const resetSrcDir = async () => {
     await fs.mkdir(`./src`);
     await fs.mkdir(`./src/solid`);
     await fs.mkdir(`./src/outline`);
+    await fs.mkdir(`./src/mini`);
   } catch (error) {
     throw new Error("Failed wiping src folders");
   }
@@ -52,10 +53,17 @@ const genComponentFromBuffer = async (
 
 const getIcons = async (style: IconStyle) => {
   const iconDir = "./heroicons/optimized";
-  let files = await fs.readdir(`${iconDir}/${style}`);
+
+  const stylePath = {
+    mini: "20/solid",
+    outline: "24/outline",
+    solid: "24/solid",
+  }[style];
+
+  let files = await fs.readdir(`${iconDir}/${stylePath}`);
   return Promise.all(
     files.filter(junk.not).map(async (file) => ({
-      svg: await fs.readFile(`${iconDir}/${style}/${file}`),
+      svg: await fs.readFile(`${iconDir}/${stylePath}/${file}`),
       componentName: `${camelcase(file.replace(/\.svg$/, ""), {
         pascalCase: true,
       })}Icon`,
@@ -75,6 +83,9 @@ const exportIcons = async (style: IconStyle) => {
 
 (async () => {
   await resetSrcDir();
-  await exportIcons("solid");
-  await exportIcons("outline");
+  const styles: IconStyle[] = ["solid", "outline", "mini"];
+
+  styles.forEach(async (s) => {
+    await exportIcons(s);
+  });
 })();
