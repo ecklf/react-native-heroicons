@@ -1,6 +1,6 @@
 {
   "name": "react-native-heroicons",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "React Native components for heroicons",
   "files": [
     "solid",
