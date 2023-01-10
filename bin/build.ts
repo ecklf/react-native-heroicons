@@ -1,6 +1,6 @@
-import svgr from "@svgr/core";
+import { transform } from "@svgr/core";
 import { promises as fs } from "fs";
-import template from "./template";
+/* import template from "./template"; */
 import junk from "junk";
 import camelcase from "camelcase";
 
@@ -22,29 +22,56 @@ const resetSrcDir = async () => {
   }
 };
 
+const template = (variables: any, { tpl }: any) => {
+  return tpl`
+import * as React from "react";
+import Svg, { Path, SvgProps, NumberProp } from "react-native-svg";
+
+interface Props extends SvgProps {
+  size?: NumberProp;
+}
+
+const ${variables.componentName} = ({ size = 24, ...props }: Props) => {
+  return (
+    ${variables.jsx}
+  )
+};
+ 
+${variables.exports};
+`;
+};
+
 const genComponentFromBuffer = async (
   componentName: string,
   svgBuffer: Buffer
 ): Promise<string> => {
   try {
-    return await svgr(
+    return await transform(
       svgBuffer,
       {
         template,
-        svgo: true,
-        svgoConfig: { plugins: [{ sortAttrs: true }, { removeXMLNS: true }] },
-        ref: false,
         native: true,
+        typescript: true,
         svgProps: { width: "{size}", height: "{size}" },
+        svgo: true,
+        svgoConfig: {
+          plugins: [
+            "removeXMLNS",
+            {
+              name: "sortAttrs",
+              params: {
+                xmlnOrder: "alphabetical",
+              },
+            },
+          ],
+        },
         plugins: [
           "@svgr/plugin-svgo",
           "@svgr/plugin-jsx",
           "@svgr/plugin-prettier",
         ],
       },
-      {
-        componentName: componentName,
-      }
+      { componentName }
     );
   } catch (error) {
     throw new Error("Failed generating components");
