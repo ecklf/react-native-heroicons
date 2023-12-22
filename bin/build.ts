@@ -63,6 +63,12 @@ const genComponentFromBuffer = async (
                 xmlnOrder: "alphabetical",
               },
             },
+            {
+              name: "removeAttrs",
+              params: {
+                attrs: ["aria-hidden"],
+              },
+            },
           ],
         },
         plugins: [
