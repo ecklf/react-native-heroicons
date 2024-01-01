@@ -68,7 +68,8 @@ export default App;
 ## Customization
 
 Icons can be adjusted with the `size` prop.
-Defaults are `16` for `micro`, `20` for `mini` and `24` for `solid`/`outline`: 24):
+
+Defaults are `16` for `micro`, `20` for `mini` and `24` for `solid`/`outline`):
 
 ```tsx
 import { SparklesIcon as SparklesIconOutline } from "react-native-heroicons/outline";
