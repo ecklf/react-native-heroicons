@@ -1,26 +1,61 @@
-export const template = (
-  { template }: any,
-  _opts: any,
-  { imports: _imports, componentName, props: _props, jsx, exports }: any
-) => {
-  const tsTemplate = template.smart({ plugins: ["typescript"] });
+import type { Options as TransformOptions } from "@svgr/babel-preset";
+export type Template = TransformOptions["template"];
 
-  return tsTemplate.ast`
-      import * as React from "react";
-      import Svg, { Path, SvgProps, NumberProp } from "react-native-svg";
+const template16: Template = (variables, { tpl }) => {
+  return tpl`
+    import * as React from "react";
+    import Svg, { Path, SvgProps, NumberProp } from "react-native-svg";
 
-      interface Props extends SvgProps {
-        size?: NumberProp;
-      }
+    interface Props extends SvgProps {
+      size?: NumberProp;
+    }
 
-      const ${componentName} = ({ size = 24, ...props }: Props) => {
-        return (
-          ${jsx}
-        )
-      };
-
-      ${exports}
-    `;
+    const ${variables.componentName} = ({ size = 16, ...props }: Props) => {
+      return (
+        ${variables.jsx}
+      )
+    };
+     
+    ${variables.exports};
+  `;
 };
 
-export default template;
+const template20: Template = (variables, { tpl }) => {
+  return tpl`
+    import * as React from "react";
+    import Svg, { Path, SvgProps, NumberProp } from "react-native-svg";
+
+    interface Props extends SvgProps {
+      size?: NumberProp;
+    }
+
+    const ${variables.componentName} = ({ size = 20, ...props }: Props) => {
+      return (
+        ${variables.jsx}
+      )
+    };
+     
+    ${variables.exports};
+  `;
+};
+
+const template24: Template = (variables, { tpl }) => {
+  return tpl`
+    import * as React from "react";
+    import Svg, { Path, SvgProps, NumberProp } from "react-native-svg";
+
+    interface Props extends SvgProps {
+      size?: NumberProp;
+    }
+
+    const ${variables.componentName} = ({ size = 24, ...props }: Props) => {
+      return (
+        ${variables.jsx}
+      )
+    };
+     
+    ${variables.exports};
+  `;
+};
+
+export { template16, template20, template24 };

@@ -3,7 +3,7 @@ const glob = require("tiny-glob");
 const fs = require("fs/promises");
 
 (async () => {
-  const entryPoints = ["solid", "outline", "mini"];
+  const entryPoints = ["solid", "outline", "mini", "micro"];
 
   entryPoints.forEach(async (ep) => {
     const entryPoints = await glob(`./src/${ep}/*.{ts,tsx}`);

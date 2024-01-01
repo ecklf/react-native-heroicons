@@ -32,17 +32,19 @@ Specific icons:
 ```tsx
 import React from "react";
 import { View } from "react-native";
-import { SparklesIcon } from "react-native-heroicons/solid";
-import { SparklesIcon as SparklesIconOutline } from "react-native-heroicons/outline";
+import { SparklesIcon as SparklesIconMicro } from "react-native-heroicons/micro";
 // Old solid style from heroicons v1
 import { SparklesIcon as SparklesIconMini } from "react-native-heroicons/mini";
+import { SparklesIcon } from "react-native-heroicons/solid";
+import { SparklesIcon as SparklesIconOutline } from "react-native-heroicons/outline";
 
 const App = () => {
   return (
     <View>
+      <SparklesIconMicro />
+      <SparklesIconMini />
       <SparklesIcon />
       <SparklesIconOutline />
-      <SparklesIconMini />
     </View>
   );
 };
@@ -65,7 +67,8 @@ export default App;
 
 ## Customization
 
-Icons can be adjusted with the `size` prop (default: 24):
+Icons can be adjusted with the `size` prop.
+Defaults are `16` for `micro`, `20` for `mini` and `24` for `solid`/`outline`: 24):
 
 ```tsx
 import { SparklesIcon as SparklesIconOutline } from "react-native-heroicons/outline";

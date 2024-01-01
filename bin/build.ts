@@ -1,10 +1,11 @@
 import { transform } from "@svgr/core";
 import { promises as fs } from "fs";
-/* import template from "./template"; */
+import { Template, template16, template20, template24 } from "./template";
 import junk from "junk";
 import camelcase from "camelcase";
 
-type IconStyle = "solid" | "outline" | "mini";
+const ICON_STYLES = ["micro", "mini", "solid", "outline"] as const;
+type IconStyle = (typeof ICON_STYLES)[number];
 
 const resetSrcDir = async () => {
   try {
@@ -14,37 +15,25 @@ const resetSrcDir = async () => {
   }
   try {
     await fs.mkdir(`./src`);
-    await fs.mkdir(`./src/solid`);
-    await fs.mkdir(`./src/outline`);
-    await fs.mkdir(`./src/mini`);
+    ICON_STYLES.forEach(async (style) => {
+      await fs.mkdir(`./src/${style}`);
+    });
   } catch (error) {
     throw new Error("Failed wiping src folders");
   }
 };
 
-const template = (variables: any, { tpl }: any) => {
-  return tpl`
-import * as React from "react";
-import Svg, { Path, SvgProps, NumberProp } from "react-native-svg";
-
-interface Props extends SvgProps {
-  size?: NumberProp;
-}
-
-const ${variables.componentName} = ({ size = 24, ...props }: Props) => {
-  return (
-    ${variables.jsx}
-  )
-};
- 
-${variables.exports};
-`;
-};
-
 const genComponentFromBuffer = async (
   componentName: string,
-  svgBuffer: Buffer
+  svgBuffer: Buffer,
+  templateIconSize: 16 | 20 | 24
 ): Promise<string> => {
+  const template = {
+    16: template16,
+    20: template20,
+    24: template24,
+  }[templateIconSize];
+
   try {
     return await transform(
       svgBuffer,
@@ -88,6 +77,7 @@ const getIcons = async (style: IconStyle) => {
   const iconDir = "./heroicons/optimized";
 
   const stylePath = {
+    micro: "16/solid",
     mini: "20/solid",
     outline: "24/outline",
     solid: "24/solid",
@@ -105,9 +95,20 @@ const getIcons = async (style: IconStyle) => {
 };
 
 const exportIcons = async (style: IconStyle) => {
+  const sizeMap: Record<IconStyle, 16 | 20 | 24> = {
+    micro: 16,
+    mini: 20,
+    outline: 24,
+    solid: 24,
+  };
+
   const icons = await getIcons(style);
   for (let { componentName, svg } of icons) {
-    const jsx = await genComponentFromBuffer(componentName, svg);
+    const jsx = await genComponentFromBuffer(
+      componentName,
+      svg,
+      sizeMap[style]
+    );
     await fs.writeFile(`./src/${style}/${componentName}.tsx`, jsx);
     const exportStr = `export { default as ${componentName} } from './${componentName}';\n`;
     await fs.writeFile(`./src/${style}/index.ts`, exportStr, { flag: "a" });
@@ -116,9 +117,7 @@ const exportIcons = async (style: IconStyle) => {
 
 (async () => {
   await resetSrcDir();
-  const styles: IconStyle[] = ["solid", "outline", "mini"];
-
-  styles.forEach(async (s) => {
+  ICON_STYLES.forEach(async (s) => {
     await exportIcons(s);
   });
 })();

@@ -1,11 +1,12 @@
 {
   "name": "react-native-heroicons",
-  "version": "3.2.1",
+  "version": "4.0.0",
   "description": "React Native components for heroicons",
   "files": [
     "solid",
     "outline",
-    "mini"
+    "mini",
+    "micro"
   ],
   "sideEffects": false,
   "scripts": {
@@ -13,7 +14,7 @@
     "gen": "npm run fetch && ts-node --project bin/tsconfig.json --files bin/build.ts",
     "gen:no": "ts-node --project bin/tsconfig.json --files bin/build.ts",
     "cleanup": "./cleanup.sh",
-    "compile": "rimraf solid && rimraf outline && rimraf mini && node compile.js && tsc --emitDeclarationOnly --outDir . && cp solid/*.d.ts solid/esm && cp outline/*.d.ts outline/esm && cp mini/*.d.ts mini/esm",
+    "compile": "rimraf solid && rimraf outline && rimraf mini && rimraf micro && node compile.js && tsc --emitDeclarationOnly --outDir . && cp solid/*.d.ts solid/esm && cp outline/*.d.ts outline/esm && cp mini/*.d.ts mini/esm && cp micro/*.d.ts micro/esm",
     "build:fetch": "npm run gen && npm run compile && npm run cleanup",
     "build": "npm run compile && npm run cleanup",
     "release": "npm run build:fetch && release-it"
@@ -34,6 +35,7 @@
   "author": "ecklf",
   "license": "MIT",
   "devDependencies": {
+    "@svgr/babel-preset": "^8.1.0",
     "@svgr/core": "^6.5.1",
     "@svgr/plugin-jsx": "^6.5.1",
     "@svgr/plugin-prettier": "^6.5.1",
